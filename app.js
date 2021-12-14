@@ -1,19 +1,24 @@
 // import functions and grab DOM elements
-import { getAllPokemon } from './fetch-utils.js';
-import { renderPokemon } from './render-utils.js';
+import { getAllMotorcycles, getAllPokemon } from './fetch-utils.js';
+import { renderMotorcycles, renderPokemon } from './render-utils.js';
 
 const pokemonDivEl = document.querySelector('#pokemon-div');
-
+const motorcyclesDivEl = document.querySelector('#motorcycles-div');
 // let state
 
 
 window.addEventListener('load', async() => {
     const allPokemon = await getAllPokemon();
-    console.log(allPokemon);
+    const allMotorcycles = await getAllMotorcycles();
+
     for (let pokemon of allPokemon) {
         const pokemonEl = renderPokemon(pokemon);
-        console.log(pokemonEl.outerHTML);
         pokemonDivEl.append(pokemonEl);
+    }
+
+    for (let moto of allMotorcycles) {
+        const motoEl = renderMotorcycles(moto);
+        motorcyclesDivEl.append(motoEl);
     }
 });
 // set event listeners

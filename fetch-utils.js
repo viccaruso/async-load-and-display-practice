@@ -6,7 +6,15 @@ const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
 export async function getAllPokemon() {
     const response = await client
-        .from('Pokemon')
+        .from('pokemon-db')
+        .select();
+
+    return response.data;
+}
+
+export async function getAllMotorcycles() {
+    const response = await client
+        .from('motorcycles')
         .select();
 
     return response.data;
