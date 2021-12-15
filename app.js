@@ -32,7 +32,6 @@ window.addEventListener('load', async() => {
 
     for (let president of allPresidents) {
         const presidentEl = renderPresident(president);
-        console.log(president);
         presidentsDivEl.append(presidentEl);
     }
 });
