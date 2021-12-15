@@ -19,3 +19,19 @@ export async function getAllMotorcycles() {
 
     return response.data;
 }
+
+export async function getAllDogs() {
+    const response = await client
+        .from('dogs')
+        .select();
+
+    return response.data;
+}
+
+export async function getAllPresidents() {
+    const response = await client
+        .from('presidents')
+        .select();
+
+    return response.data;
+}

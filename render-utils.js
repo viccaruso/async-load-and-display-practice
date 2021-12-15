@@ -17,7 +17,7 @@ export function renderPokemon(pokemon) {
     return container;
 }
 
-export function renderMotorcycles(motorcycle) {
+export function renderMotorcycle(motorcycle) {
     const makeEl = document.createElement('p');
     const modelEl = document.createElement('p');
     const yearEl = document.createElement('p');
@@ -32,6 +32,42 @@ export function renderMotorcycles(motorcycle) {
 
     container.classList.add('motorcycle');
     container.append(makeEl, modelEl, yearEl, displacementEl, hrEl);
+
+    return container;
+}
+
+export function renderDog(dog) {
+    const nameEl = document.createElement('p');
+    const numOfLegsEl = document.createElement('p');
+    const colorEl = document.createElement('p');
+    const favToyEl = document.createElement('p');
+    const hrEl = document.createElement('hr');
+    const container = document.createElement('div');
+
+    nameEl.textContent = `Name: ${dog.name}`;
+    numOfLegsEl.textContent = `Number of Legs: ${dog.legs}`;
+    colorEl.textContent = `Color(s): ${dog.color}`;
+    favToyEl.textContent = `Favorite Toy: ${dog.fav_toy}`;
+
+    container.classList.add('dog');
+    container.append(nameEl, colorEl, numOfLegsEl, favToyEl, hrEl);
+
+    return container;
+}
+
+export function renderPresident(president) {
+    const fullNameEl = document.createElement('p');
+    const yearsServedEl = document.createElement('p');
+    const totalYearsEl = document.createElement('p');
+    const hrEl = document.createElement('hr');
+    const container = document.createElement('div');
+
+    fullNameEl.textContent = `${president.firstName} ${president.lastName}`;
+    yearsServedEl.textContent = `${president.start_year} - ${president.end_year}`;
+    totalYearsEl.textContent = `Years in office: ${president.total_years}`;
+
+    container.classList.add('president');
+    container.append(fullNameEl, yearsServedEl, totalYearsEl, hrEl);
 
     return container;
 }
